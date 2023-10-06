@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Pressable, ActivityIndicator } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-// import { useNavigation, useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 // import { DataStore } from "aws-amplify";
 // import { Dish } from "../../models";
 // import { useBasketContext } from "../../contexts/BasketContext";
@@ -13,7 +13,7 @@ const DishDetailsScreen = () => {
   // const [dish, setDish] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   // const route = useRoute();
   // const id = route.params?.id;
 
@@ -71,13 +71,13 @@ const DishDetailsScreen = () => {
       </View>
 
       
-      {/* <Pressable onPress={onAddToBasket} style={styles.button}> */}
+      <Pressable onPress={() => navigation.navigate("Basket")} style={styles.button}>
       <View style={styles.button}>
         <Text style={styles.buttonText}>
           Add {quantity} to basket &#8226; ${getTotal()}
         </Text>
       </View>
-      {/* </Pressable> */}
+      </Pressable>
     </View>
   );
 };

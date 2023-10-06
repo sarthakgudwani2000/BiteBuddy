@@ -1,6 +1,6 @@
 import { View, Text, Image } from "react-native";
 import restaurants from "../../../assets/data/restaurants.json";
-import styles from "./style";
+import styles from "./styles";
 
 const restaurant = restaurants[0];
 
